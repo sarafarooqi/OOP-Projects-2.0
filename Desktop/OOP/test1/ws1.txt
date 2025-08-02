@@ -1,0 +1,4 @@
+1. The purpose of the log message is to describe what changes were made and why
+2. A good commit message is clear and explains the reason for the changes
+3. I should commit my work whenever I make progress or complete a task.
+4. False, you should avoid committing unnecessary files. 
