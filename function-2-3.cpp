@@ -9,14 +9,14 @@ void two_five_nine(int array[], int n){
     for (int i = 0; i < n; i++){
         switch (array[i]){
             case 1:
-            cnt2++;
-            break;
+                cnt2++;
+                break;
             case 2:
-            cnt5++;
-            break;
+                cnt5++;
+                break;
             case 3:
-            cnt9++;
-            break;
+                cnt9++;
+                break;
         }
     }
     cout << "2:" << cnt2 << ";5:" << cnt5 << ";9:" << cnt9 << ";" << endl;
