@@ -8,13 +8,13 @@ void two_five_nine(int array[], int n){
 
     for (int i = 0; i < n; i++){
         switch (array[i]){
-            case 1:
+            case 2:
                 cnt2++;
                 break;
-            case 2:
+            case 5:
                 cnt5++;
                 break;
-            case 3:
+            case 9:
                 cnt9++;
                 break;
         }
