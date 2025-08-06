@@ -1,0 +1,113 @@
+//--------------Activity 1-------------- (PART A)
+
+//Convert the number 75 from base 10 (decimal) to base 2 (binary)
+
+//Listing out the the powers of 2
+//2^0 = 1
+//2^1 = 2
+//2^2 = 4
+//2^3 = 8
+//2^4 = 16
+//2^5 = 32
+//2^6 = 64
+
+//Check how many of each fit into 75: 1 of 64, 1 of 8, 1 of 2 and 1 of 1
+//The rest of the powers would be 0, so the final binary number is: 1001011
+
+//To convert 110111011 from base 2 (binary) to base 10 (decimal)
+// List the powers of 2 underneath the individual digits
+
+// 1    1   0   1   1   1   0   1   1
+//256  128  64  32  16  8   4   2   1
+
+//The numbers under 0 go to 0 because when multipled by 0 they equal 0.
+// Thus they can be ignored, and sum up the rest to get:
+//256+16+64+32+16+8+4+2+1 = 443
+
+//----------------------Activity 2-----------------
+
+//Convert the number 75 from base 10 to base 8
+// Divide 75 by 8 and continue until no remainder
+
+// 75/8 = 9 R 3
+// 9/8 = 1 R 1
+// 1/8 = 0 R 1
+
+// Taking the remainders will result in the binary: 113
+
+//Convert the number 1346742 from base 8 to base 10
+// Write the powers of 8 underneath each individual digit
+
+// 1	3	4	6	7	4	2
+//8^6  8^5 8^4 8^3 8^2 8^1 8^0
+
+// Multiply each power by the respective digit above it to result in the sum:
+// 1(262144) + 3(32768) + 4(4096) + 6(512) + 7(64) + 4(8) + 2(1) = 380386
+
+//----------------Activity 3------------------
+// Transform 75 from base 10 to base 16
+
+//Continuously divide 75 by 16 and keep track of the remainders
+
+//75 / 16 = 4 R 11
+// 4 / 16 = 0 R 4
+
+//Taking the remainders results in: 4B (Because in hexadecimal after 9, it becomes letters)
+//Binary: 4B
+
+//Convert 64FEA to base 10
+
+//Use powers of 16
+
+// 6		4		F		E		A
+//16^4	   16^3	  16^2	   16^1	   16^0
+//				  15	   14	   10 (Hex digits for the letters)
+//	6(65536) + 4(4096) + 15(256) + 14(16) + 10 = 414674 
+
+//---------------------Activity 1 (PART B)----------------
+
+//Add the number 11 base 10 to binary 111011101011 
+
+//111011101011
+//          11
+//--------------
+//111011101110
+
+//To convert the result to decimal, use the same techniques from Part A. 
+//Decimal: 3820
+
+//Sum of 111011101011 and 111011101011 is:
+//111011101011
+//111011101011
+//------------
+//1110111010110
+
+//Convert the number to a decimal: Since it is double the number from the first 
+// part, we can just do 3280(2) = 6560
+
+//-----------------Activity 2--------------
+
+//Subtract 11 from 111011101011
+//111011101011
+//          11
+//------------
+//111011101000
+
+//Transform the difference to a decimal: 3814
+
+//Subtract 1110101 from 111011101011
+// The difference is: 111000010110
+// As a decimal: 3606
+
+//------------------Activity 3-------------
+//Shift 111011101011 to the right by one position
+// When shifting you drop, the last digit: 11101110101
+// As a decimal: 1909
+// It divides by 2 like integer division
+
+//-----------------Activity 4---------------
+// Shift the number 111011101011 to the left by one position
+// This means to add a 0 at the end
+//1110111010110
+//As a decimal: 7634
+
