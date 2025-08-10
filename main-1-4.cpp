@@ -2,6 +2,7 @@
 #include <vector>
 using namespace std;
 
+void print_scaled(int array[3][3], int scale);
 int main(){
     int scale;
     int matrix[3][3]= {
