@@ -2,8 +2,7 @@
 #include <vector>
 using namespace std;
 
-void print_scaled(int array1[3][3], int array2[3][3]);
-
+void print_summed(int array1[3][3], int array2[3][3]);
 int main(){
     int array1[3][3] = {
         {1,2,3},
