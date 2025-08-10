@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
+void count_digits(int array[4][4]);
 
 int main(){
     int matrix[4][4] = {
