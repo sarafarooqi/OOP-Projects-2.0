@@ -32,12 +32,15 @@ void printArray(double* arr, int size_arr){
 //Part 4
 double arrayMax(double* array, int size){
     double max = 0;
+    if (size <= 0){
+        return -1;
+    }
     for (int i = 0; i < size; i++){
         if (array[i] > max){
             max = array[i];
         }
+    return max;
     }
-    cout << max;
 }
 
 //Part 5
@@ -54,7 +57,7 @@ double* dynamicArray(int n, double m){
     double* array1 = new double[n];
 
     for(int i = 0; i < n; i++){
-        array1[i] = i*m;
+        array1[i] = m;
     }
     return array1;
 }
