@@ -31,10 +31,11 @@ void printArray(double* arr, int size_arr){
 
 //Part 4
 double arrayMax(double* array, int size){
-    double max = 0;
+    
     if (size <= 0){
         return -1;
     }
+    double max = array[0];
     for (int i = 0; i < size; i++){
         if (array[i] > max){
             max = array[i];
