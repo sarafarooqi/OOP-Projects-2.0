@@ -1,5 +1,3 @@
-#include <iostream>
-
 int *readNumbers();
 void hexDigits(int *numbers, int length);
 
