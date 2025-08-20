@@ -83,3 +83,5 @@ void hexDigits(int *numbers, int length){
     std::cout << (char)hexadecimal << std::endl;
 
 }
+
+}
