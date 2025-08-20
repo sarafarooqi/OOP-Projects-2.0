@@ -1,3 +1,5 @@
+#include <iostream>
+
 int *readNumbers(){
     int *array = new int[10];
     for(int i = 0; i < 10; i++){
@@ -12,3 +14,6 @@ void printNumbers(int *numbers, int length){
         std::cout << numbers[i] << " " << std::endl;
     }
 }
+
+
+
