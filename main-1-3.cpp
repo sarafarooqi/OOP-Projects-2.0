@@ -1,8 +1,8 @@
 #include "Person.h"
 #include <iostream>
 
-PersonList deepCopyPersonList(PersonList pl);
-
+PersonList createPersonList(int n);
+PersonList deepCopyPersonList (PersonList pl);
 int main(void){
     PersonList old = createPersonList(4);
     PersonList new1 = deepCopyPersonList(old);
