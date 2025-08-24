@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Person.h"
+
 Person* createPersonArray(int n);
 int main(void){
     /* Person person1;
@@ -17,7 +18,7 @@ int main(void){
     int n = 4;
     Person* point = createPersonArray(n); 
     for(int i = 0; i < n; i++){
-        std::cout << point[i].name << " " << point[i].age <<std::endl;
+        std::cout << "Person " << i+1 << ": " << point[i].name << ", " << point[i].age <<std::endl;
     }
     delete[] point;
     return 0;
