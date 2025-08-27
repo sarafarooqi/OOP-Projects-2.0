@@ -43,6 +43,8 @@ bool Orchestra::add_musician(Musician new_musician){
         members[Size] = new_musician;
         Size++;
         return true;
-    }
-    
+    }  
+}
+Orchestra::~Orchestra(){
+delete[] members;
 }
