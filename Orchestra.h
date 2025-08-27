@@ -37,6 +37,4 @@ bool add_musician(Musician new_musician);
 ~Orchestra();
 };
 
-Orchestra::~Orchestra(){}
-
 #endif
