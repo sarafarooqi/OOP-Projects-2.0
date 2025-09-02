@@ -14,7 +14,7 @@ using namespace std;
             cout << name << "is out of mana and cannot cast a spell"<<endl;
         }
         mana = mana - damage;
-        if(mana = 0){
+        if(mana == 0){
             mana = 0;
         }
         std::cout << name << " casts a spell on " << opponent->getName() << " for " << damage << " damage.\n";
