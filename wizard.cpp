@@ -13,12 +13,10 @@ using namespace std;
         if (mana <= 0){
             cout << name << "is out of mana and cannot cast a spell"<<endl;
         }
-        if(mana == 0){
-            mana = 0;
-            cout << name << " cannot cast a spell" << endl;
-        }
-        this->attack(opponent, damage);
+        int manaUsed = min(mana, damage);
+        int damageDone = damage + manaUsed;
+        this->attack(opponent, damageDone);
         std::cout << name << " casts a spell on " << opponent->getName() << " for " << damage << " damage.\n";
-        mana = mana - 1;
+        mana = mana - manaUsed;
         
     }
