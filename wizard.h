@@ -8,8 +8,7 @@ class Wizard: public Player{
     public:
     int mana;
 
-    Wizard(string name, int health, int damage, int mana)
-    :Player(name, health,damage){}
+    Wizard(string name, int health, int damage, int mana);
     //deals damage to opponent based on player's mana point
     void castSpell(Player* opponent);
 };
