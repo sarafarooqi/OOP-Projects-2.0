@@ -10,11 +10,12 @@ using namespace std;
     }
     //deals damage to opponent based on player's mana point
     void Wizard::castSpell(Player* opponent){
-        if (mana <= 0){
+      if (mana <= 0){
             cout << name << "is out of mana and cannot cast a spell"<<endl;
         }
         mana = mana - damage;
         if(mana == 0){
+            attack(opponent,damage);
             mana = 0;
         }
         std::cout << name << " casts a spell on " << opponent->getName() << " for " << damage << " damage.\n";
