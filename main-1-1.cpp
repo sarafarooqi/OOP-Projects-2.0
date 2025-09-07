@@ -20,17 +20,23 @@ int main(){
         cin >> type;
 
         int ID = i + 1;
-        string timeOfEntry = "10:00";
-        int duration = 100;
 
         if (type == "Car"){
-            vehicles[i] = new Car(timeOfEntry, ID, duration);
+            vehicles[i] = new Car(ID);
         }else if(type == "Bus"){
-            vehicles[i] = new Bus(timeOfEntry, ID, duration);
+            vehicles[i] = new Bus(ID);
         }else{
-            vehicles[i] = new Motorbike(timeOfEntry, ID, duration);
+            vehicles[i] = new Motorbike(ID);
         }
+
+        int duration;
+        cout << "Enter the duration that the vehicle is parked: ";
+        cin >> duration;
 
         cout << vehicles[i]->getParkingDuration() << endl;
     }
+    for (int i = 0; i < n; i++){
+        delete vehicles[i];
+    }
+    return 0;
 }
