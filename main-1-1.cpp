@@ -28,7 +28,7 @@ int main() {
             vehicles[i] = new Motorbike(ID);
         }
 
-        cout << type << " parking furation: " << vehicles[i]->getParkingDuration() << " seconds" << endl;
+        cout << type << " parking duration: " << vehicles[i]->getParkingDuration() << " seconds" << endl;
     }
 
     return 0;
