@@ -13,6 +13,10 @@ class Vehicle{
     public:
     Vehicle(int ID);
     int getID() const;
+
+    void setTime(int duration){
+        dur1 = duration;
+    }
     virtual int getParkingDuration() = 0;
     virtual ~Vehicle() = default;
 };
