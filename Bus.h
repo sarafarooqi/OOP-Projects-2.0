@@ -4,7 +4,7 @@
 
 class Bus: public Vehicle{
     public:
-    Bus(string timeOfEntry, int ID, int duration);
-    int getParkingDuration() override;
+    Bus(int ID);
+    int getParkingDuration(duration) override;
 };
 #endif
