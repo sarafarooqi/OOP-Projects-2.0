@@ -5,8 +5,8 @@
 class Car: public Vehicle{
     public:
 
-    Car(string timeOfEntry, int ID, int duration);
-    int getParkingDuration() override;
+    Car(int ID);
+    int getParkingDuration(int seconds) override;
 
 };
 
