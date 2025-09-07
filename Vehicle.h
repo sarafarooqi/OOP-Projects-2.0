@@ -14,8 +14,8 @@ class Vehicle{
     Vehicle(int ID);
     int getID() const;
 
-    void setTime(int duration){
-        dur1 = duration;
+    void setTime(int seconds){
+        duration = seconds;
     }
     virtual int getParkingDuration() = 0;
     virtual ~Vehicle() = default;
