@@ -9,7 +9,7 @@ using namespace std;
 int main() {
     ParkingLot space(10);
 
-    for (int i = 0; i <= 10; i++) {
+    for (int i = 1; i <= 10; i++) {
         string type;
         cout << "Enter the type of vehicle: " << endl;
         cin >> type;
