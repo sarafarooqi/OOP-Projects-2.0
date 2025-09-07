@@ -15,6 +15,7 @@ public:
     int getCount();
     void parkVehicle(Vehicle* types);
     void unparkVehicle(int ID);
+    int countOverstayingVehicles(int maxParkingDuration);
 };
 
 #endif
