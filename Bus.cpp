@@ -1,11 +1,8 @@
 #include "Bus.h"
 
-    Bus::Bus(string timeOfEntry, int ID, int duration):Vehicle(timeOfEntry, ID){
-        this -> duration = duration;
+    Bus::Bus(int ID):Vehicle(ID){
     }
 
-    int Bus::getParkingDuration(){
-        int new_time;
-        new_time = duration * 0.25;
-        return duration - new_time;
+    int Bus::getParkingDuration(int duration){
+        return duration - (duration * 0.25);
     }
