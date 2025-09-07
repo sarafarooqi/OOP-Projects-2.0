@@ -2,8 +2,8 @@
 #define BUS_H
 #include "Vehicle.h"
 
-class Bus: public Vehicle{
-    public:
+class Bus : public Vehicle {
+public:
     Bus(int ID);
     int getParkingDuration() override;
 };
