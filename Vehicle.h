@@ -13,7 +13,7 @@ class Vehicle{
     public:
     Vehicle(int ID);
     int getID() const;
-    virtual int getParkingDuration(int duration) = 0;
+    virtual int getParkingDuration() = 0;
     virtual ~Vehicle() = default;
 };
 #endif
