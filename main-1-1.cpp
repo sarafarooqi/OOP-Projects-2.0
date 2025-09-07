@@ -33,7 +33,7 @@ int main(){
         cout << "Enter the duration that the vehicle is parked: ";
         cin >> duration;
 
-        cout << vehicles[i]->getParkingDuration() << endl;
+        cout << vehicles[i]->getParkingDuration(duration) << endl;
     }
     for (int i = 0; i < n; i++){
         delete vehicles[i];
