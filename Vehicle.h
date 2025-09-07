@@ -5,19 +5,14 @@
 #include <string>
 using namespace std;
 
-class Vehicle{
-    protected:
-    time_t timeOfEntry;
+class Vehicle {
+protected:
+    std::time_t timeOfEntry;
     int ID;
 
-    public:
+public:
     Vehicle(int ID);
-    int getID() const;
-
-    void setTime(int seconds){
-        duration = seconds;
-    }
-    virtual int getParkingDuration() = 0;
     virtual ~Vehicle() = default;
+    virtual int getParkingDuration() = 0;
 };
 #endif
