@@ -5,6 +5,6 @@
 using namespace std;
 
 Vehicle::Vehicle(int ID) {
-    this->timeOfEntry = std::time(nullptr);
+    this->timeOfEntry = std::time(nullptr)-4;
     this->ID = ID;
 }
