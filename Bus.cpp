@@ -3,6 +3,6 @@
     Bus::Bus(int ID):Vehicle(ID){
     }
 
-    int Bus::getParkingDuration(int duration){
-        return duration - (duration * 0.25);
+    int Bus::getParkingDuration(){
+        return duration - (duration * 0.25)/100;
     }
