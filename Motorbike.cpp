@@ -3,6 +3,6 @@
    Motorbike::Motorbike(int ID):Vehicle(ID){
     }
 
-    int Motorbike::getParkingDuration(duration){
+    int Motorbike::getParkingDuration(int duration){
         return duration - (duration * 0.15);
     }
