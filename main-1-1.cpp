@@ -29,11 +29,12 @@ int main(){
             vehicles[i] = new Motorbike(ID);
         }
 
-        int duration;
+        int seconds;
         cout << "Enter the duration that the vehicle is parked: ";
-        cin >> duration;
+        cin >> seconds;
 
-        cout << vehicles[i]->getParkingDuration(duration) << endl;
+        vehicles[i]->setDuration(seconds);
+        cout << vehicles[i]->getParkingDuration() << endl;
     }
     for (int i = 0; i < n; i++){
         delete vehicles[i];
