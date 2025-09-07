@@ -4,8 +4,10 @@
 using namespace std;
 
 
-Vehicle::Vehicle(string timeOfEntry, int ID){
-    this -> timeOfEntry = timeOfEntry;
+Vehicle::Vehicle(int ID){
+    this -> timeOfEntry = time(0);
     this -> ID = ID;
-    this -> duration = duration;
+}
+int Vehicle::getID() const{
+    return ID;
 }
