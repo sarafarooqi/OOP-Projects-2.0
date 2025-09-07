@@ -3,12 +3,9 @@
 #include <string>
 using namespace std;
 
-Car::Car(string timeOfEntry, int ID, int duration):Vehicle(timeOfEntry, ID){
-    this->duration = duration;
+Car::Car(int ID):Vehicle(ID){
 }
 
-        int Car::getParkingDuration(){
-        int new_time;
-        new_time = duration * 0.10;
-        return duration - new_time;
+        int Car::getParkingDuration(int seconds){
+        return seconds - (seconds * 0.10);
         }
