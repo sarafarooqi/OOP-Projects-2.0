@@ -2,12 +2,10 @@
 #define MOTORBIKE_H
 #include "Vehicle.h"
 
-class Motorbike: public Vehicle{
-    public:
-
+class Motorbike : public Vehicle {
+public:
     Motorbike(int ID);
     int getParkingDuration() override;
-
 };
 
 #endif
