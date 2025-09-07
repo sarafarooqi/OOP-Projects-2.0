@@ -14,5 +14,6 @@ public:
     Vehicle(int ID);
     virtual ~Vehicle() = default;
     virtual int getParkingDuration() = 0;
+    int getID();
 };
 #endif
