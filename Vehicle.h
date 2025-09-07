@@ -6,12 +6,12 @@ using namespace std;
 
 class Vehicle{
     protected:
-    string timeOfEntry;
+    time_t timeOfEntry;
     int ID;
-    int duration;
 
     public:
-    Vehicle(string timeOfEntry, int ID);
+    Vehicle(int ID);
+    int getID() const;
     virtual int getParkingDuration() = 0;
 };
 #endif
