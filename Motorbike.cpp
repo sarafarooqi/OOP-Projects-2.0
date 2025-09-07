@@ -1,11 +1,8 @@
 #include "Motorbike.h"
 
-   Motorbike::Motorbike(string timeOfEntry, int ID, int duration):Vehicle(timeOfEntry, ID){
-        this -> duration = duration;
+   Motorbike::Motorbike(int ID):Vehicle(ID){
     }
 
-    int Motorbike::getParkingDuration(){
-        int new_time;
-        new_time = duration * 0.15;
-        return duration - new_time;
+    int Motorbike::getParkingDuration(duration){
+        return duration - (duration * 0.15);
     }
