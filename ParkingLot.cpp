@@ -16,6 +16,7 @@ int ParkingLot::getCount() {
 void ParkingLot::parkVehicle(Vehicle* types) {
     if (count >= maxSpaces) {
         cout << "The lot is full" << endl;
+        return;
     }
     vehicles[count++] = types;
 }
@@ -33,6 +34,6 @@ void ParkingLot::unparkVehicle(int ID) {
         }
     }
     if (temp != false) {
-        cout << "Vehicle is not in the lot" << endl;
+        cout << "Vehicle not in the lot" << endl;
     }
 }
