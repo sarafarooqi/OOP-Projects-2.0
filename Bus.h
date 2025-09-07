@@ -5,6 +5,6 @@
 class Bus: public Vehicle{
     public:
     Bus(int ID);
-    int getParkingDuration(duration) override;
+    int getParkingDuration(int duration) override;
 };
 #endif
