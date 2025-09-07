@@ -6,6 +6,6 @@ using namespace std;
 Car::Car(int ID):Vehicle(ID){
 }
 
-        int Car::getParkingDuration(int duration){
-        return duration - (duration * 0.10);
+        int Car::getParkingDuration(){
+        return duration - (duration * 0.10)/100;
         }
