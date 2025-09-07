@@ -28,6 +28,8 @@ int main() {
             vehicles[i] = new Motorbike(ID);
         }
 
+         std::this_thread::sleep_for(std::chrono::seconds(4));
+
         cout << type << " parking duration: " << vehicles[i]->getParkingDuration() << " seconds" << endl;
     }
 
