@@ -1,5 +1,6 @@
 #ifndef VEHICLE_H
 #define VEHICLE_H
+#include <ctime>
 #include <iostream>
 #include <string>
 using namespace std;
@@ -12,6 +13,7 @@ class Vehicle{
     public:
     Vehicle(int ID);
     int getID() const;
-    virtual int getParkingDuration() = 0;
+    virtual int getParkingDuration(int seconds) = 0;
+    virtual ~Vehicle() = default;
 };
 #endif
