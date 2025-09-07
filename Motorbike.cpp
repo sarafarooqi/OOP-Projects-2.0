@@ -1,8 +1,10 @@
 #include "Motorbike.h"
+#include <ctime>
 
-   Motorbike::Motorbike(int ID):Vehicle(ID){
-    }
+Motorbike::Motorbike(int ID) : Vehicle(ID) {}
 
-    int Motorbike::getParkingDuration(){
-        return duration - (duration * 0.15)/100;
-    }
+int Motorbike::getParkingDuration() {
+    int duration = (std::time(nullptr) - timeOfEntry);
+    int reduction = (duration * 0.15);
+    return duration - reduction;
+}
