@@ -3,22 +3,31 @@
 
 #include "Appliance.h"
 
+    //default constructor
     Appliance::Appliance(){
         powerRating = 0;
         isOn = false;
     }
     //constructor that assigns the values
-    Appliance::Appliance(int powerRating, bool isOn){
+    Appliance::Appliance(int powerRating){
         this->powerRating = powerRating;
-        this->isOn = isOn;
+        this->isOn = false;
     }
 
     int Appliance::get_powerRating(){
         return powerRating;
     }
 
-    bool Appliance::get_isOn(bool isOn){
+    void Appliance::set_powerRating(int powerRating){
+        this->powerRating = powerRating;
+    }
+
+    bool Appliance::get_isOn(){
         return isOn;
+    }
+
+    void Appliance::set_isOn(bool isOn){
+        this->isOn = isOn;
     }
 
     void Appliance::turnOn(){
@@ -27,6 +36,8 @@
     void Appliance::turnOff(){
         isOn = false;
     }
-    int Appliance::getPowerConsumption(){
-        return 0;
+   double Appliance::getPowerConsumption(){
+        return 0.0;
     }
+
+
