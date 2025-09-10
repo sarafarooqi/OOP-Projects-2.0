@@ -2,7 +2,7 @@
 #define APPLIANCE_H
 
 class Appliance {
-    protected:
+    private:
     int powerRating;
     bool isOn;
     
@@ -10,12 +10,20 @@ class Appliance {
     //default constructor
     Appliance();
     //constructor that assigns the values
-    Appliance(int powerRating, bool isOn);
+    Appliance(int powerRating);
+
     int get_powerRating();
-    bool get_isOn(bool isOn);
+
+    void set_powerRating(int powerRating);
+
+    bool get_isOn();
+
+    void set_isOn(bool isOn);
+
     void turnOn();
     void turnOff();
-    virtual int getPowerConsumption();
+    virtual double getPowerConsumption();
 };
+
 
 #endif
