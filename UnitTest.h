@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string.h>
 using namespace std;
+#include "Addition.h"
 class UnitTest{
     public:
     void runTests(){
