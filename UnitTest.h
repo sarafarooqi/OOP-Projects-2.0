@@ -8,16 +8,16 @@ class UnitTest{
         Addition addition;
 
         if(addition.add(1,2) != 3){
-            cout << "Test 1 failed!" << endl;
+            std::cout << "Test 1 failed!" << std::endl;
         }
         if(addition.add(-1,3) != 2){
-            cout << "Test 2 failed!" << endl;
+            std::cout << "Test 2 failed!" << std::endl;
         }
          if(addition.add(-2,1) != -1){
-            cout << "Test 3 failed!" << endl;
+            std::cout << "Test 3 failed!" << std::endl;
         }
          if(addition.add(0,3) != 3){
-            cout << "Test 4 failed!" << endl;
+            std::cout << "Test 4 failed!" << std::endl;
         }
 }
 };
