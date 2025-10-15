@@ -1,0 +1,156 @@
+#include <iostream>
+#include "BattleGame.h"
+#include <string>
+
+// Initialize all four static variables to 0
+// ====================
+// Constructor. Implementation given.
+int BattleGame::totalGamesPlayed = 0;
+int BattleGame::totalDamageDealt = 0;
+int BattleGame::player1Wins = 0;
+int BattleGame::player2Wins = 0;
+
+BattleGame::BattleGame(std::string p1Name, std::string p2Name) {
+player1 = Player(p1Name);
+player2 = Player(p2Name);
+currentState = GameState::PLAYING;
+}
+// ========================================
+// TODO: Implement calculateDamage
+// ========================================
+// Based on the ActionType. Return damage values for:
+// LIGHTATTACK: 15
+// HEAVYATTACK: 30
+// BLOCK: 0
+// If using a switch statement, remember to set default: 0.
+int BattleGame::calculateDamage(ActionType action) {
+    if(action == LIGHTATTACK){
+        return 15;
+    }else if(action == HEAVYATTACK){
+        return 30;
+    }else if (action == BLOCK){
+        return 0;
+    }
+    return 0;
+}
+// ========================================
+// TODO: Implement resolveActions
+// ========================================
+// This function applies damage from both players
+// 1. Calculate damage for both players. Which method from BattleGame should be used here?
+// 2. If p1Damage > 0:
+// - Apply damage to player2 (Which method from Player should be used here?)
+// - Add to static counter totalDamageDealt
+// 3. If p2Damage > 0:
+// - Apply damage to player1 (Which method from Player should be used here?)
+// - Add to static counter totalDamageDealt
+void BattleGame::resolveActions(ActionType p1Move, ActionType p2Move) {
+    int p1Out = calculateDamage(p1Move);
+    int p2Out = calculateDamage(p2Move);
+
+    int damage_player1 = p2Out;
+    int damage_player2 = p1Out;
+
+    if(player1.getIsBlocking()){
+        damage_player1 = 0;
+    }
+    if(player2.getIsBlocking()){
+        damage_player2 = 0;
+    }
+    player1.takeDamage(damage_player1);
+    player2.takeDamage(damage_player2);
+    
+    totalDamageDealt = totalDamageDealt + damage_player1 + damage_player2;
+
+}
+// ========================================
+// TODO: Implement updateGameState
+// ========================================
+// This function checks if the game has ended and updates statistics
+// 1. Check if both players are alive. Which Player class function can you use here?
+// 2. Determine outcomes for:
+// i. If both players are not alive
+// ii. If only p1 not alive
+// iii. If only p2 not alive
+// 3. For each of the possible outcomes
+// - Set appropriate game states (refer to GameState enum values)
+// - Increment the static variables player1Wins or player2Wins where necessary.
+// - Increment the static variable totalGamesPlayed
+//
+// IMPORTANT: Notice we increment totalGamesPlayed HERE when game ends,
+// NOT in the constructor. A game is only "played" when it finishes!
+void BattleGame::updateGameState() {
+    if(currentState != PLAYING){
+        return;
+    }
+    bool p1_isAlive = player1.getHealth() > 0;
+    bool p2_isAlive = player2.getHealth() > 0;
+
+    if(!p1_isAlive && !p2_isAlive){
+        currentState = DRAW;
+        totalGamesPlayed++;
+    }else if(!p1_isAlive && p2_isAlive){
+        currentState = PLAYER2_WON;
+        player2Wins++;
+        totalGamesPlayed++;
+    }else if(p1_isAlive && !p2_isAlive){
+        currentState = PLAYER1_WON;
+        player1Wins++;
+        totalGamesPlayed++;
+    }else{
+        currentState = PLAYING;
+    }
+}
+// ========================================
+// TODO: Implement executeTurn
+// ========================================
+// This function orchestrates a single turn of combat. (Also demonstrates function decomposition)
+// 1. Set each player's blocking status:
+// - If action is BLOCK, call setBlocking(true)
+// - Otherwise, call setBlocking(false)
+// 2. Call resolveActions(p1Move, p2Move)
+// 3. Call updateGameState()
+void BattleGame::executeTurn(ActionType p1Move, ActionType p2Move) {
+    if(p1Move == BLOCK){
+        player1.setBlocking(true);
+    } else {
+        player1.setBlocking(false);
+    }
+
+    if(p2Move == BLOCK){
+        player2.setBlocking(true);
+    }else{
+        player2.setBlocking(false);
+    }
+    resolveActions(p1Move, p2Move);
+    updateGameState();
+}
+// Displays current HP for both players. Implementation is given.
+void BattleGame::displayStatus() {
+std::cout << "\n=== Battle Status ===" << std::endl;
+std::cout << player1.getName() << " HP: " << player1.getHealth() << std::endl;
+std::cout << player2.getName() << " HP: " << player2.getHealth() << std::endl;
+std::cout << "===================\n" << std::endl;
+}
+// ========================================
+// TODO: Returns the current game's state.
+// ========================================
+GameState BattleGame::getGameState() {
+    return currentState;
+}
+// Displays the current game's statistics. Implementation is given.
+void BattleGame::displayStatistics() {
+std::cout << "\n=== Game Statistics ===" << std::endl;
+std::cout << "Total Games Played: " << totalGamesPlayed << std::endl;
+std::cout << "Total Damage Dealt: " << totalDamageDealt << std::endl;
+std::cout << "Player 1 Wins: " << player1Wins << std::endl;
+std::cout << "Player 2 Wins: " << player2Wins << std::endl;
+std::cout << "=======================\n" << std::endl;
+}
+// ========================================
+// TODO: Returns the total number of games played.
+// ========================================
+int BattleGame::getTotalGamesPlayed() {
+    return totalGamesPlayed;
+
+}
