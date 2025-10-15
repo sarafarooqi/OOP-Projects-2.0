@@ -45,23 +45,18 @@ int BattleGame::calculateDamage(ActionType action) {
 // - Apply damage to player1 (Which method from Player should be used here?)
 // - Add to static counter totalDamageDealt
 void BattleGame::resolveActions(ActionType p1Move, ActionType p2Move) {
-    int p1Out = calculateDamage(p1Move);
-    int p2Out = calculateDamage(p2Move);
+    int p1Damage = calculateDamage(p1Move);
+    int p2Damage = calculateDamage(p2Move);
 
-    int damage_player1 = p2Out;
-    int damage_player2 = p1Out;
-
-    if(player1.getIsBlocking()){
-        damage_player1 = 0;
+    if (p1Damage > 0) {
+        player2.takeDamage(p1Damage);
+        totalDamageDealt = totalDamageDealt + p1Damage;
     }
-    if(player2.getIsBlocking()){
-        damage_player2 = 0;
-    }
-    player1.takeDamage(damage_player1);
-    player2.takeDamage(damage_player2);
-    
-    totalDamageDealt = totalDamageDealt + damage_player1 + damage_player2;
 
+    if (p2Damage > 0) {
+        player1.takeDamage(p2Damage);
+        totalDamageDealt = totalDamageDealt + p2Damage;
+    }
 }
 // ========================================
 // TODO: Implement updateGameState
