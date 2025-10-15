@@ -44,7 +44,7 @@ int BattleGame::calculateDamage(ActionType action) {
 // 3. If p2Damage > 0:
 // - Apply damage to player1 (Which method from Player should be used here?)
 // - Add to static counter totalDamageDealt
-void BattleGame::resolveActions(ActionType p1Move, ActionType p2Move) {
+void BattleGame::resolveAttacks(ActionType p1Move, ActionType p2Move) {
     int p1Damage = calculateDamage(p1Move);
     int p2Damage = calculateDamage(p2Move);
 
