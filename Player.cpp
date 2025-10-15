@@ -1,5 +1,5 @@
 #include <iostream>
-#include "player.h"
+#include "Player.h"
 #include <string>
 
 Player::Player(){
