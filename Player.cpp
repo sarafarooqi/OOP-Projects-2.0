@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Player.h"
+#include "player.h"
 #include <string>
 
 Player::Player(){
@@ -8,7 +8,7 @@ Player::Player(){
 }
 
 Player::Player(std::string playerName){
-    this->name = playerName;
+    name = playerName;
 }
 
 void Player::takeDamage(int damage){
@@ -23,7 +23,7 @@ void Player::takeDamage(int damage){
 }
 
 void Player::setBlocking(bool blocking){
-    blocking = isBlocking;
+    isBlocking = blocking;
 }
 
 bool Player::getIsBlocking(){
