@@ -7,7 +7,7 @@ Player::Player(){
     isBlocking = false;
 }
 
-Player::Player(std::string playerName){
+Player::Player(std::string playerName):health(100), isBlocking(false){
     name = playerName;
 }
 
