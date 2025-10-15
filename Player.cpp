@@ -1,0 +1,47 @@
+#include <iostream>
+#include "player.h"
+#include <string>
+
+Player::Player(){
+    health = 100;
+    isBlocking = false;
+}
+
+Player::Player(std::string playerName){
+    this->name = playerName;
+}
+
+void Player::takeDamage(int damage){
+    if (isBlocking == true){
+        damage = damage/2;
+        isBlocking = false;
+    }
+    health = health - damage;
+    if(health < 0){
+        health = 0;
+    }
+}
+
+void Player::setBlocking(bool blocking){
+    blocking = isBlocking;
+}
+
+bool Player::getIsBlocking(){
+    return isBlocking;
+}
+
+int Player::getHealth(){
+    return health;
+}
+
+std::string Player::getName(){
+    return name;
+}
+
+bool Player::isAlive(){
+    if(health > 0){
+        return true;
+    }else{
+        return false;
+    }
+}
