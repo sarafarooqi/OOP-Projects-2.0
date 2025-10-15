@@ -45,7 +45,7 @@ int calculateDamage(ActionType action);
 // ========================================
 // TODO: Implement resolveActions. Refer to problem description for function behaviour.
 // ========================================
-void resolveActions(ActionType p1Move, ActionType p2Move);
+void resolveAttacks(ActionType p1Move, ActionType p2Move);
 // ========================================
 // TODO: Implement updateGameState. Refer to problem description for function behaviour
 // ========================================
