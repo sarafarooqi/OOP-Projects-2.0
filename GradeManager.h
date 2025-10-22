@@ -16,7 +16,7 @@ class GradeManager{
 
     void updateGrade(int index, int newGrade);
 
-    int countOccurences(int grade);
+    int countOccurrences(int grade);
 
     std::vector<int> findAllIndices(int grade);
 
