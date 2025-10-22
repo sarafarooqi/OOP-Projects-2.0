@@ -48,7 +48,9 @@ int RecordManager::getGrade(int studentID){
 }
 std::pair<int, int> RecordManager::getRecord(int studentID){
     for(auto& record: records){
-        return record;
+        if(record.first == studentID){
+            return record;
+        }
     }
     return {-1, -1};
 }
