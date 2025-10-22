@@ -22,7 +22,7 @@ void GradeManager::updateGrade(int index, int newGrade){
     }
 }
 
-int GradeManager::countOccurences(int grade){
+int GradeManager::countOccurrences(int grade){
     int counter = 0;
     int size_v = grades.size();
     for(int i = 0; i < size_v; i++){
