@@ -26,7 +26,7 @@ int GradeManager::countOccurrences(int grade){
     int counter = 0;
     int size_v = grades.size();
     for(int i = 0; i < size_v; i++){
-        if(grades[i] < grade){
+        if(grades[i] == grade){
             counter = counter + 1;
         }
     }
@@ -48,7 +48,7 @@ int GradeManager::countBelow(int threshold){
     int size_v = grades.size();
     int counter = 0;
     for (int i = 0; i < size_v; i++){
-        if(grades[i] == threshold){
+        if(grades[i] < threshold){
             counter = counter + 1;
         }
     }
