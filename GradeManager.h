@@ -1,0 +1,33 @@
+#ifndef GRADE_MANAGER
+#define GRADE_MANAGER
+#include <vector>
+#include <string.h>
+
+class GradeManager{
+    private:
+    std::vector<int> grades;
+
+    public:
+    GradeManager();
+
+    void addGrade(int grade);
+
+    void removeAt(int index);
+
+    void updateGrade(int index, int newGrade);
+
+    int countOccurences(int grade);
+
+    std::vector<int> findAllIndices(int grade);
+
+    int countBelow(int threshold);
+
+    int getSize();
+
+    double getAverage();
+
+    void clearGrades();
+
+};
+
+#endif
