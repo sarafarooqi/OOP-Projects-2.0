@@ -33,9 +33,18 @@ Creature::~Creature() {
   // TODO: decrement totalCreatures count
 }
 
+static const char* creatureTypeToString(Creature::CreatureType t) {
+    switch (t) {
+        case Creature::CreatureType::WARRIOR: return "Warrior";
+        case Creature::CreatureType::MAGE:    return "Mage";
+        case Creature::CreatureType::ARCHER:  return "Archer";
+        default:                              return "Unknown";
+    }
+}
+
 void Creature::printInfo() const {
   // TODO: print creature details in format:
-  std::cout << "Creature - " << name << " (Cost " << cost<< "): " << "Creature Type=" <<static_cast<int>(type) <<",\n" << "Attack=" << attack << ", Defense=" << defense << std::endl; 
+  std::cout << "Creature - " << name << " (Cost " << cost<< "): " << "Creature Type=" <<creatureTypeToString(type) <<", Attack=" << attack << ", Defense=" << defense << std::endl; 
   // "Creature - <name> (Cost <cost>): Creature Type=<typeName>,
   // Attack=<attack>, Defense=<defense>"
 }
