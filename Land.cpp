@@ -27,7 +27,7 @@ static const char* landTypeToString(Land::LandType t) {
     switch (t) {
         case Land::LandType::FOREST:   return "Forest";
         case Land::LandType::MOUNTAIN: return "Mountain";
-        case Land::LandType::SWAMP:    return "Water";
+        case Land::LandType::SWAMP:    return "Swamp";
         default:                       return "Unknown";
     }
 }
