@@ -1,0 +1,64 @@
+// Deck.cpp (Skeleton)
+#include <iostream>
+
+#include "Creature.h"
+#include "Deck.h"
+#include "Land.h"
+
+int Deck::totalDecks = 0;
+
+Deck::Deck() {
+  // Initialize an empty deck
+  totalDecks++;
+}
+
+Deck::Deck(const Deck& other) {
+  totalDecks++;
+  // Deep copy cards from other
+  for (Card* c : other.cards) {
+    // TODO: copy/clone card from the deck and add it to teh new deck
+     Card* newCard = c->clone();
+    cards.push_back(newCard);
+    // NOTE: Increment Card count static in each new Card's constructor (happens
+    // automatically)
+  }
+}
+
+Deck::~Deck() {
+  // Delete all cards in the deck
+  for (Card* c : cards) {
+    delete c;
+  }
+  totalDecks--;
+}
+
+void Deck::addCard(Card* card) {
+  cards.push_back(card);
+  // NOTE: (Card count is updated by Card constructor of the object being added)
+}
+
+int Deck::size() const {
+  // TODO: return number of cards in deck
+  return static_cast<int>(cards.size());
+}
+
+int Deck::countCreatures() const {
+  int count = 0;
+  for (Card* c : cards) {
+    // TODO: if c is a Creature , increment count
+    if (dynamic_cast<Creature*>(c) != nullptr) {
+      count++;
+    }
+  }
+  return count;
+}
+
+void Deck::printDeck() const {
+  std::cout << "Deck contains " << cards.size() << " cards:" << std::endl;
+  for (Card* c : cards) {
+    // TODO: print details of each card
+    c->printInfo();
+  }
+}
+
+int Deck::getTotalDecks() { return totalDecks; }
