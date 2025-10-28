@@ -23,8 +23,17 @@ Land::~Land() {
   // TODO: decrement totalLands count
 }
 
+static const char* landTypeToString(Land::LandType t) {
+    switch (t) {
+        case Land::LandType::FOREST:   return "Forest";
+        case Land::LandType::MOUNTAIN: return "Mountain";
+        case Land::LandType::SWAMP:    return "Water";
+        default:                       return "Unknown";
+    }
+}
+
 void Land::printInfo() const {
-    std::cout << "Land - " << name << " (Cost " << cost << "): " << static_cast<int>(landType) << " land." << std::endl;
+    std::cout << "Land - " << name << " (Cost " << cost << "): " << landTypeToString(landType) << " land." << std::endl;
   // TODO: print land details in format:
   // "Land - <name> (Cost <cost>): <TypeName> land."
 }
